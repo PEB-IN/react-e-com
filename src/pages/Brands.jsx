@@ -6,7 +6,7 @@ const Brands = (props) => {
     <>
         <div className='slide-content'>
             <div className='png'>
-                <img src={props.item.image}/>    
+                <a href='https://www.honda2wheelersindia.com/' target="_blank"><img src={props.item.image}/></a>
             </div>
         </div>
  

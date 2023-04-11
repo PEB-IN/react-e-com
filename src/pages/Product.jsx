@@ -6,11 +6,11 @@ const Product = (props) => {
     <div className="slide-content swiper-slide">
         <div className="dress">
         <div className='coloumn sale'>{props.item.sale}</div>
-          <img src={props.item.image}/>
+          <img id="prod_img" src={props.item.image}/>
             <div className="head">
               <div className="detail">
-                <p id='details'>{props.item.detail}</p>
-                <p id='price'>{props.item.cost} <del id='off'>{props.item.offer}</del></p>  
+                <p id='details'>{props.item.description}</p>
+                <p id='price'>{props.item.price} <del id='off'>{props.item.category}</del></p>  
               </div>
               <div className='icon1'>
                 <i className="fa fa-shopping-cart icon" aria-hidden="true"></i>

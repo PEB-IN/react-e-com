@@ -29,10 +29,63 @@ import image18 from "../../assets/image/austin-wade-d2s8NQ6WD24-unsplash.jpg"
 import image19 from "../../assets/image/luobulinka-FO4mQZi1c0M-unsplash.jpg"
 import image20 from "../../assets/image/img2.jpg"
 import image21 from "../../assets/image/img1.jpg"
-import Footer from "../Common/Footer/Footer";
+import axios from "axios"
+import Loader from "../Common/Loader/Loader";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
 
+const params=useParams();
+let data = [
+    { "name": "Joe", "age": 17 },
+    { "name": "Bob", "age": 17 },
+    { "name": "Carl", "age": 35 }
+  ];
+
+// const unique = [...new Set(data.map(item => item.age))];
+// console.log(unique);
+
+ const [online, setOnline]= useState([]);
+ const [category,setCategory]=useState([]);
+ const [loading,setLoading]=useState(true);
+
+    useEffect(() => {
+        axios.get(`https://fakestoreapi.com/products`)
+        .then(res => {
+            //console.log(res.data.slice(5,9));
+            setOnline(res.data.slice(5,9));
+            const unique = [...new Set(res.data.map(item => item.category))];
+            setCategory(unique);
+            setLoading(false);
+
+
+        })
+        .catch((error)=>{
+            console.log(error);
+            setLoading(false);
+        })
+    },[])
+   // console.log(category);
+
+
+const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        setLoading(true);
+        axios.get(`https://fakestoreapi.com/products`)
+            .then (res => {
+                console.log(res.data.slice(0,4));
+                setProducts(res.data.slice(0,4));
+                setLoading(false);
+
+            }).catch((error)=>{
+                console.log(error);
+                setLoading(false);
+            })
+    },[])
+    
     const first = [
         {
             image:image1,
@@ -121,7 +174,7 @@ const Home = () => {
             button:"Shop Casual", 
         },
         {
-            image:image14,
+            image:image18,
             button:"Best Seller" 
         },
   
@@ -217,11 +270,16 @@ return(
     <div className="currated">
         <div className="container">
             <h3>Currated Picks</h3>
+
+            {loading ? "Loading" : <>
             <Slider {...Academybanner}>
-                {slide.map((item, i) => (
+                {products.map((item, i) => (
                     <Picks key = {i} item = {item}/>
                 ))}
             </Slider>
+            </>}
+            
+            
         </div>
     </div>
 </section>
@@ -233,17 +291,20 @@ return(
     </div>
         <div className="container">
             <h3>Products</h3>
-            <SliderWrapper>
+            {loading ? <Loader/>:<>
+                        <SliderWrapper>
                 <Slider {...Products}>
-                        {prod.map((item, i) =>(
+                        {online.map((item, i) =>(
                             <Product key ={i} item ={item}/>
                         ))}
                 </Slider>
             </SliderWrapper>
+            </>}
+
         </div>
     </div>
 </section>
-
+                    
 {/* <section>
     <div>
     <div className="App">
@@ -277,7 +338,6 @@ return(
     </div>
 </section>
 
-<Footer/>
     </>
     );
 };

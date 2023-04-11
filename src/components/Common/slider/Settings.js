@@ -4,13 +4,12 @@ import SamplePrevArrow from "./SamplePrevArrow";
 
 export const Mainbanner = {
   dots: true,
-
   arrows: true,
-  speed: 800,
+  speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: false,
-  autoplaySpeed: 4000,
+  autoplay: true,
+  autoplaySpeed: 3000,
   adaptiveHeight: false,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
@@ -57,6 +56,7 @@ export const Brandsbanner = {
       breakpoint: 1025,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
         arrows: false,
       },
     },
@@ -64,13 +64,15 @@ export const Brandsbanner = {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
         arrows: false,
       },
     },
     {
       breakpoint: 550,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         arrows: false,
       },
     },
@@ -113,7 +115,7 @@ export const Products = {
   autoplay: true,
   arrows: false,
   dots:true,
-  adaptiveHeight: true,
+  adaptiveHeight: false,
   appendDots: dots => <ul>{dots}</ul>,
   customPaging: i => (
     <div className="ft-slick__dots--custom">
@@ -157,26 +159,30 @@ export const Products = {
 //   )
 // };
 
-export const tools_product_4 = {
+export const page_product = {
   infinite: true,
   speed: 300,
   slidesToShow: 4,
-  slidesToScroll: 4,
-  autoplay: true,
+  slidesToScroll: 1,
+  autoplay: false,
   autoplaySpeed: 5000,
-  arrows: false,
+  dots:false,
+  arrows: true,
+  adaptiveHeight: false,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
   responsive: [
     {
       breakpoint: 1200,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 767,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 2,
       },
     },
@@ -187,23 +193,26 @@ export const Product4 = {
   infinite: true,
   speed: 300,
   slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToScroll: 1,
   autoplay: true,
-  arrows: false,
+  arrows: true,
   autoplaySpeed: 3000,
+  adaptiveHeight: false,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
   responsive: [
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 4,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 991,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 3,
+        slidesToScroll: 1,
       },
     },
   ],
