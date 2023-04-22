@@ -6,6 +6,7 @@ export const Mainbanner = {
   dots: true,
   arrows: true,
   speed: 1000,
+  infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
@@ -114,10 +115,10 @@ export const Products = {
   initialSlide: 0,
   autoplay: true,
   arrows: false,
-  dots:true,
+  dots: true,
   adaptiveHeight: false,
-  appendDots: dots => <ul>{dots}</ul>,
-  customPaging: i => (
+  appendDots: (dots) => <ul>{dots}</ul>,
+  customPaging: (i) => (
     <div className="ft-slick__dots--custom">
       <div className="loading" />
     </div>
@@ -166,7 +167,7 @@ export const page_product = {
   slidesToScroll: 1,
   autoplay: false,
   autoplaySpeed: 5000,
-  dots:false,
+  dots: false,
   arrows: true,
   adaptiveHeight: false,
   nextArrow: <SampleNextArrow />,
@@ -317,25 +318,21 @@ export const Banner = {
   ],
 };
 
-export const PackSlider_ = {
-  dots: true,
-  infinite: false,
+export const PackSlider = {
+  dots: false,
+  infinite: true,
   arrows: false,
-  speed: 1000,
-  slidesToShow: 3,
+  speed: 800,
+  slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: false,
+  autoplay: true,
   autoplaySpeed: 4000,
-  adaptiveHeight: false,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
+  adaptiveHeight: true,
+  pauseOnHover: false,
+  fade: true,
+  cssEase: "linear",
 };
+
 export const Person = {
   dots: false,
   infinite: false,

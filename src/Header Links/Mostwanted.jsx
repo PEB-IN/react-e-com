@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
 
-const Mostwanted=()=>{
+const Mostwanted = () => {
   return (
-    
     <section>
-    <div>Mostwanted</div>
-    <div>
+      <div>Mostwanted</div>
+      <div>
         <p>uhgsuhgsghskgh</p>
         <p>uhgsuhgsghskgh</p>
         <p>uhgsuhgsghskgh</p>
@@ -13,10 +12,9 @@ const Mostwanted=()=>{
         <p>uhgsuhgsghskgh</p>
         <p>uhgsuhgsghskgh</p>
         <p>uhgsuhgsghskgh</p>
-    </div>
+      </div>
     </section>
-
   );
 };
 
-export default Mostwanted
+export default Mostwanted;
