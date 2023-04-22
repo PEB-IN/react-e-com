@@ -1,8 +1,8 @@
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 
 const SliderWrapper = styled("div")`
   .slick-list {
-    overflow: ${props => (props.overflow ? "visible" : "hidden")};
+    overflow: ${(props) => (props.overflow ? "visible" : "hidden")};
   }
   /* Slider */
   .slick-slider {
