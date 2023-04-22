@@ -33,6 +33,7 @@
     "react-content-loader": "^6.2.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
+    "react-emotion": "^9.2.12",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",
     "react-infinite-scroll-component": "^6.1.0",
